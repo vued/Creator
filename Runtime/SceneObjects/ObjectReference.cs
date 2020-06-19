@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
 namespace Innoactive.Creator.Core.SceneObjects
 {
@@ -43,6 +44,11 @@ namespace Innoactive.Creator.Core.SceneObjects
 
         protected ObjectReference()
         {
+        }
+
+        internal override Type GetReferenceType()
+        {
+            return typeof(T);
         }
 
         protected ObjectReference(string uniqueName) : base(uniqueName)
