@@ -480,7 +480,7 @@ namespace Innoactive.CreatorEditor.UI.Windows
 
             options.Add(new TestableEditorElements.MenuItem(new GUIContent("Add step"), false, () =>
             {
-                IStep step = EntityBuilder.Instance.BuildStep(e.PointerPosition);
+                IStep step = EntityBuilder.Instance.BuildStep<StepFactory>(e.PointerPosition);
                 AddStepWithUndo(step);
             }));
 
