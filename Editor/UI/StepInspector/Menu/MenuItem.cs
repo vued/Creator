@@ -21,6 +21,9 @@ namespace Innoactive.CreatorEditor.UI.StepInspector.Menu
         /// </summary>
         public abstract string DisplayedName { get; }
 
+        /// <summary>
+        /// Returns the Type of the item created in <see cref="GetNewItem"/>
+        /// </summary>
         public virtual Type GetItemType()
         {
             return GetNewItem().GetType();
