@@ -12,7 +12,16 @@
         /// </summary>
         public override IEntity Create()
         {
-            IStep step = new Step("New Step");
+            return Create("New Step");
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="IStep"/> and returns it as <see cref="IEntity"/>.
+        /// </summary>
+        /// <param name="name"><see cref="IStep"/>'s name.</param>
+        public override IEntity Create(string name)
+        {
+            IStep step = new Step(name);
             ITransition transition = (ITransition) transitionFactory.Create();
 
             step.Data.Transitions.Data.Transitions.Add(transition);

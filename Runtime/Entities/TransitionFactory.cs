@@ -12,5 +12,11 @@
         {
             return new Transition();
         }
+
+        /// <inheritdoc/>
+        public override IEntity Create(string name)
+        {
+            return Create();
+        }
     }
 }

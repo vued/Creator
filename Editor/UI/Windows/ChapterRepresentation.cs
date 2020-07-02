@@ -173,7 +173,7 @@ namespace Innoactive.CreatorEditor.UI.Windows
 
             node.CreateTransitionButton.GraphicalEventHandler.PointerClick += (sender, args) =>
             {
-                ITransition transition = new Transition();
+                ITransition transition = EntityBuilder.Instance.BuildTransition<TransitionFactory>();
 
                 RevertableChangesHandler.Do(new CourseCommand(
                     () =>
@@ -381,7 +381,7 @@ namespace Innoactive.CreatorEditor.UI.Windows
                                         closuredStep.Data.Transitions.Data.Transitions.Remove(closuredTransition);
                                         if (isLast)
                                         {
-                                            closuredStep.Data.Transitions.Data.Transitions.Add(new Transition());
+                                            closuredStep.Data.Transitions.Data.Transitions.Add(EntityBuilder.Instance.BuildTransition<TransitionFactory>());
                                         }
 
                                         MarkToRefresh();
