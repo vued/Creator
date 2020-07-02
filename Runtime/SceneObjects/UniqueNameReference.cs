@@ -21,7 +21,5 @@ namespace Innoactive.Creator.Core.SceneObjects
         {
             UniqueName = uniqueName;
         }
-
-        internal abstract Type GetReferenceType();
     }
 }

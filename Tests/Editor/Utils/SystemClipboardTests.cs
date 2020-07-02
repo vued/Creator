@@ -163,7 +163,7 @@ namespace Innoactive.CreatorEditor.Tests
             IStep step = new Step("Step");
             IStep target = new Step("Step 2");
 
-            step.Data.Transitions.Data.Transitions.Add(new Transition());
+            step.Data.Transitions.Data.Transitions.Add(EntityBuilder.Instance.BuildTransition<TransitionFactory>());
             step.Data.Transitions.Data.Transitions.First().Data.TargetStep = target;
 
             // When I copy and paste it
@@ -180,7 +180,7 @@ namespace Innoactive.CreatorEditor.Tests
             // Given a step with a transition to itself,
             IStep step = new Step("Step");
 
-            step.Data.Transitions.Data.Transitions.Add(new Transition());
+            step.Data.Transitions.Data.Transitions.Add(EntityBuilder.Instance.BuildTransition<TransitionFactory>());
             step.Data.Transitions.Data.Transitions.First().Data.TargetStep = step;
 
             // When I copy and paste it
@@ -221,9 +221,9 @@ namespace Innoactive.CreatorEditor.Tests
             // Given a step with three transitions,
             IStep step = new Step("Step");
 
-            step.Data.Transitions.Data.Transitions.Add(new Transition());
-            step.Data.Transitions.Data.Transitions.Add(new Transition());
-            step.Data.Transitions.Data.Transitions.Add(new Transition());
+            step.Data.Transitions.Data.Transitions.Add(EntityBuilder.Instance.BuildTransition<TransitionFactory>());
+            step.Data.Transitions.Data.Transitions.Add(EntityBuilder.Instance.BuildTransition<TransitionFactory>());
+            step.Data.Transitions.Data.Transitions.Add(EntityBuilder.Instance.BuildTransition<TransitionFactory>());
 
             // When I copy and paste it,
             SystemClipboard.CopyStep(step);
@@ -240,9 +240,9 @@ namespace Innoactive.CreatorEditor.Tests
             // Given a step with three transitions with different conditions,
             IStep step = new Step("Step");
 
-            step.Data.Transitions.Data.Transitions.Add(new Transition());
-            step.Data.Transitions.Data.Transitions.Add(new Transition());
-            step.Data.Transitions.Data.Transitions.Add(new Transition());
+            step.Data.Transitions.Data.Transitions.Add(EntityBuilder.Instance.BuildTransition<TransitionFactory>());
+            step.Data.Transitions.Data.Transitions.Add(EntityBuilder.Instance.BuildTransition<TransitionFactory>());
+            step.Data.Transitions.Data.Transitions.Add(EntityBuilder.Instance.BuildTransition<TransitionFactory>());
 
             step.Data.Transitions.Data.Transitions[0].Data.Conditions.Add(new EndlessConditionMock());
             step.Data.Transitions.Data.Transitions[1].Data.Conditions.Add(new OptionalEndlessConditionMock());
@@ -267,9 +267,9 @@ namespace Innoactive.CreatorEditor.Tests
             IStep target2 = new Step("Target 2");
             IStep target3 = new Step("Target 3");
 
-            step.Data.Transitions.Data.Transitions.Add(new Transition());
-            step.Data.Transitions.Data.Transitions.Add(new Transition());
-            step.Data.Transitions.Data.Transitions.Add(new Transition());
+            step.Data.Transitions.Data.Transitions.Add(EntityBuilder.Instance.BuildTransition<TransitionFactory>());
+            step.Data.Transitions.Data.Transitions.Add(EntityBuilder.Instance.BuildTransition<TransitionFactory>());
+            step.Data.Transitions.Data.Transitions.Add(EntityBuilder.Instance.BuildTransition<TransitionFactory>());
             step.Data.Transitions.Data.Transitions[0].Data.TargetStep = target1;
             step.Data.Transitions.Data.Transitions[1].Data.TargetStep = target2;
             step.Data.Transitions.Data.Transitions[2].Data.TargetStep = target3;
